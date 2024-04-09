@@ -6,16 +6,14 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
 } from 'react-native';
+import ArticleCard from './components/ArticleCard';
 import {Article, Category, useFetchingNews} from '../../api/useFetchingNews';
-import {NewsItem} from '../../ui/News/NewsItem';
-import {useNavigation} from '@react-navigation/native';
-import {AppScreens} from '../constants';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import useNewsStore, {
-  addFavoriteArticle,
-  removeFavoriteArticle,
-} from '../../core/News';
+
+const renderNewsItem = ({item}: {item: Article}) => {
+  return <ArticleCard article={item} />;
+};
 
 export function NewsScreen() {
   const [selectedCategory, setSelectedCategory] = useState<Category>(
@@ -25,38 +23,6 @@ export function NewsScreen() {
     useFetchingNews({
       category: selectedCategory,
     });
-  const favoriteArticles = useNewsStore(state => state.favoriteArticles);
-
-  const navigation = useNavigation();
-
-  const renderNewsItem = ({item}: {item: Article}) => {
-    const isFavorite = favoriteArticles.some(article => article.id === item.id);
-    return (
-      <NewsItem
-        name={item.name}
-        description={item.description}
-        onPress={() => {
-          navigation.navigate(AppScreens.WebView, {
-            url: item.url,
-          });
-          // navigation.navigate(NavigatorKey.Detail, {
-          //   screen: AppScreens.WebView,
-          //   params: {
-          //     url: item.url,
-          //   },
-          // });
-        }}
-        isFavorite={isFavorite}
-        onPressFavorite={() => {
-          if (isFavorite) {
-            removeFavoriteArticle(item);
-          } else {
-            addFavoriteArticle(item);
-          }
-        }}
-      />
-    );
-  };
 
   if (isError) {
     return (

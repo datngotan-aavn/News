@@ -1,9 +1,9 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {AppScreens} from '../screens/constants';
-import {WebViewProps, WebViewScreen} from '../screens/WebView';
 import {NavigatorKey} from './constants';
+import {WebViewProps, WebViewScreen} from '../screens/WebView';
+import {AppScreens} from '../screens/constants';
 
 export type DetailStackParamList = {
   [AppScreens.WebView]: WebViewProps;

@@ -4,9 +4,7 @@
   "private": true,
   "scripts": {
     "android:dev": "react-native run-android --mode=devdebug --appId com.news.dev",
-    "android:dev-release": "react-native run-android --mode=devrelease --appId com.news.dev",
     "android:prod": "react-native run-android --mode=proddebug --appId com.news",
-    "android:prod-release": "react-native run-android --mode=prodrelease --appId com.news",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",

@@ -1,8 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-
-import {AppScreens} from '../screens/constants';
 import {WebViewProps, WebViewScreen} from '../screens/WebView';
+import {AppScreens} from '../screens/constants';
 import {FavoriteScreen} from '../screens/Favorites';
 
 export type FavoriteStackParamList = {

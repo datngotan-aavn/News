@@ -52,9 +52,9 @@ react {
 }
 project.ext.envConfigFiles = [
     dev: ".env.dev",
-    prod: ".env"
+    prod: ".env.prod"
 ]
-apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+apply from: project(":react-native-config").projectDir.getPath() + "/dotenv.gradle"
 
 /**
  * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
@@ -102,6 +102,7 @@ android {
             targetSdkVersion rootProject.ext.targetSdkVersion
             applicationIdSuffix ".dev"
             versionNameSuffix "-dev"
+            resValue "string", "build_config_package", "com.news"
 	    }
         prod {
             minSdkVersion rootProject.ext.minSdkVersion
@@ -111,6 +112,7 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            matchingFallbacks = ['debug', 'release']
         }
         release {
             // Caution! In production, you need to generate your own keystore file.

@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1210"
+   LastUpgradeVersion = "1530"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES">
+      buildImplicitDependencies = "YES"
+      buildArchitectures = "Automatic">
       <PreActions>
          <ExecutionAction
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;cp &quot;${PROJECT_DIR}/../.env.prod&quot; &quot;${PROJECT_DIR}/../.env&quot;&#10;">
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;cp &quot;${PROJECT_DIR}/../.env.dev&quot; &quot;${PROJECT_DIR}/../.env&quot;&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-                     BuildableName = "News.app"
-                     BlueprintName = "News"
+                     BlueprintIdentifier = "4F1F645D2BC5C4AF00D9AD27"
+                     BuildableName = "NewsDev.app"
+                     BlueprintName = "NewsDev"
                      ReferencedContainer = "container:News.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
@@ -32,9 +33,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "News.app"
-               BlueprintName = "News"
+               BlueprintIdentifier = "4F1F645D2BC5C4AF00D9AD27"
+               BuildableName = "NewsDev.app"
+               BlueprintName = "NewsDev"
                ReferencedContainer = "container:News.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,19 +45,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "NewsTests.xctest"
-               BlueprintName = "NewsTests"
-               ReferencedContainer = "container:News.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -72,9 +62,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "News.app"
-            BlueprintName = "News"
+            BlueprintIdentifier = "4F1F645D2BC5C4AF00D9AD27"
+            BuildableName = "NewsDev.app"
+            BlueprintName = "NewsDev"
             ReferencedContainer = "container:News.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -89,9 +79,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "News.app"
-            BlueprintName = "News"
+            BlueprintIdentifier = "4F1F645D2BC5C4AF00D9AD27"
+            BuildableName = "NewsDev.app"
+            BlueprintName = "NewsDev"
             ReferencedContainer = "container:News.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
