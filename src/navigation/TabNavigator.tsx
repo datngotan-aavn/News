@@ -5,6 +5,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigatorKey} from './constants';
 import {NewsNavigator} from './NewsNavigator';
 import {FavoriteNavigator} from './FavoriteNavigator';
+import {useTranslation} from 'react-i18next';
+import {TFunction} from 'i18next';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,14 +14,15 @@ const getRouteIcon = (
   routeName: string,
   color: string,
   focused: boolean,
+  t: TFunction<'translation', undefined>,
 ): JSX.Element => {
   let label = 'News';
   switch (routeName) {
     case NavigatorKey.News:
-      label = 'News';
+      label = t('global_news');
       break;
     case NavigatorKey.Favorite:
-      label = 'Favorite';
+      label = t('global_favorite');
       break;
   }
   const fontSize = focused ? 20 : 15;
@@ -31,11 +34,12 @@ const getRouteIcon = (
 };
 
 export const TabNavigator = () => {
+  const {t} = useTranslation();
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
         tabBarIcon: ({color, focused}) =>
-          getRouteIcon(route.name, color, focused),
+          getRouteIcon(route.name, color, focused, t),
         tabBarActiveTintColor: 'green',
         tabBarInactiveTintColor: 'black',
         headerShown: false,

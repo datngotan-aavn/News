@@ -50,6 +50,11 @@ react {
     //   The list of flags to pass to the Hermes compiler. By default is "-O", "-output-source-map"
     // hermesFlags = ["-O", "-output-source-map"]
 }
+project.ext.envConfigFiles = [
+    dev: ".env.dev",
+    prod: ".env"
+]
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 /**
  * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
@@ -89,6 +94,19 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+    }
+    flavorDimensions "default"
+    productFlavors {
+        dev {
+            minSdkVersion rootProject.ext.minSdkVersion
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+	    }
+        prod {
+            minSdkVersion rootProject.ext.minSdkVersion
+            targetSdkVersion rootProject.ext.targetSdkVersion
+	    }
     }
     buildTypes {
         debug {

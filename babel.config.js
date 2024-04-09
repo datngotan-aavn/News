@@ -1,4 +1,16 @@
 module.exports = {
   presets: ['module:@react-native/babel-preset'],
-  plugins: ['nativewind/babel'],
+  plugins: [
+    [
+      'module-resolver',
+      {
+        root: ['./src/'],
+        extensions: ['.js', '.json'],
+        alias: {
+          '@': './src',
+        },
+      },
+    ],
+    'nativewind/babel',
+  ],
 };

@@ -39,6 +39,12 @@ export function NewsScreen() {
           navigation.navigate(AppScreens.WebView, {
             url: item.url,
           });
+          // navigation.navigate(NavigatorKey.Detail, {
+          //   screen: AppScreens.WebView,
+          //   params: {
+          //     url: item.url,
+          //   },
+          // });
         }}
         isFavorite={isFavorite}
         onPressFavorite={() => {

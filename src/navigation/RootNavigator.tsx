@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import {NavigatorKey} from './constants';
 import {TabNavigator} from './TabNavigator';
+import {DetailNavigator} from './DetailNavigator';
 
 const Stack = createStackNavigator();
 
@@ -15,6 +16,7 @@ export const Root = () => {
         headerShown: false,
       }}>
       <Stack.Screen name={NavigatorKey.Tab} component={TabNavigator} />
+      <Stack.Screen name={NavigatorKey.Detail} component={DetailNavigator} />
     </Stack.Navigator>
   );
 };

@@ -1,8 +1,9 @@
 import axios from 'axios';
+import Config from 'react-native-config';
 
 export const client = axios.create({
-  baseURL: 'https://newsapi.org',
+  baseURL: Config.API_URL,
   params: {
-    apiKey: 'e5c8ab4597044cab9988aa7058507832',
+    apiKey: Config.API_KEY,
   },
 });
