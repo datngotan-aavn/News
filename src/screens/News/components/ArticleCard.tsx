@@ -7,12 +7,13 @@ import useNewsStore, {
 } from '../../../core/News';
 import {useNavigation} from '@react-navigation/native';
 import {AppScreens} from '../../constants';
+import {NewsNavigator} from '../../../navigation/NewsNavigator';
 
 export default function ArticleCard({article}: {article: Article}) {
   const favoriteArticles = useNewsStore(state => state.favoriteArticles);
 
   const isFavorite = favoriteArticles.some(it => it.id === article.id);
-  const navigation = useNavigation();
+  const navigation = useNavigation<NewsNavigator>();
 
   return (
     <Card
@@ -22,6 +23,9 @@ export default function ArticleCard({article}: {article: Article}) {
         navigation.navigate(AppScreens.WebView, {
           url: article.url,
         });
+        // navigation.replace(AppScreens.WebView, {
+        //   url: article.url,
+        // });
         // navigation.navigate(NavigatorKey.Detail, {
         //   screen: AppScreens.WebView,
         //   params: {

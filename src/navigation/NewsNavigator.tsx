@@ -1,16 +1,28 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import {
+  StackNavigationProp,
+  createStackNavigator,
+} from '@react-navigation/stack';
 import {WebViewProps, WebViewScreen} from '../screens/WebView';
 import {AppScreens} from '../screens/constants';
 import {NewsScreen} from '../screens/News';
+import {NavigatorKey} from './constants';
 
 export type NewsStackParamList = {
+  [NavigatorKey.News]: {
+    screen: keyof Omit<NewsStackParamList, 'NewsNavigator'>;
+    params: {[key: string]: any};
+  };
   [AppScreens.News]: undefined;
   [AppScreens.WebView]: WebViewProps;
 };
 
 const Stack = createStackNavigator<NewsStackParamList>();
 
+export type NewsNavigator = StackNavigationProp<
+  NewsStackParamList,
+  NavigatorKey.News
+>;
 export const NewsNavigator = () => {
   return (
     <Stack.Navigator
